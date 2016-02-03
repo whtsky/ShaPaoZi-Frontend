@@ -16,7 +16,6 @@ export default {
   },
   route: {
     data (transition) {
-      console.log(this.$http.options.root)
       let page = transition.to.params.page
       if (page === undefined) {
         page = 1

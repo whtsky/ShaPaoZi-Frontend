@@ -1,15 +1,27 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
+  {{ data | json }}
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      msg: 'Hello Detail!'
+  export default {
+    data () {
+      return {
+        data: {}
+      }
+    },
+    route: {
+      data (transition) {
+        let infohash = transition.to.params.infohash
+
+        this.$http.get('infohash/' + infohash).then(function (response) {
+
+          this.$set('data', response.data)
+
+        }, function (response) {
+
+          // error callback
+        })
+      }
     }
   }
-}
 </script>
