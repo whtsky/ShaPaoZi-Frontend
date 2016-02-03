@@ -2,15 +2,16 @@
   "name": "shapaozi-frontend",
   "description": "The frontend of shapaozi.me",
   "author": "whtsky <whtsky@gmail.com>",
-  "contributors": [{
-    "name": "Margaux7",
-    "email": ""
-  }],
+  "contributors": [
+    {
+      "name": "Margaux7",
+      "email": ""
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
-    "test": "karma start build/karma.conf.js --single-run"
+    "build": "rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js"
   },
   "dependencies": {
     "vue": "^1.0.15",
@@ -45,6 +46,7 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.6.0"
   }
 }

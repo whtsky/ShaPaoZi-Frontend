@@ -11,15 +11,17 @@ if (process.env.NODE_ENV === 'development') {
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
+Vue.http.options.root = '/api'
+
 var router = new VueRouter({
   hashbang: false,
   history: true,
   saveScrollPosition: true
 })
 
-import Home from './components/Home.vue'
-import Search from './components/Search.vue'
-import Detail from './components/Detail.vue'
+import Home from './views/Home.vue'
+import Search from './views/Search.vue'
+import Detail from './views/Detail.vue'
 
 router.map({
   '/': {
@@ -27,6 +29,10 @@ router.map({
     component: Home
   },
   '/search/:text': {
+    name: 'search',
+    component: Search
+  },
+  '/search/:text/page/:page': {
     name: 'search',
     component: Search
   },
