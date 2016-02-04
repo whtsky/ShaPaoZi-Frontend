@@ -19,6 +19,12 @@
     border: 3px solid rgb(166, 74, 72);
   }
 
+  @media (max-width: 900px) {
+    .result {
+      width: 85%;
+    }
+  }
+
   .result header {
     font-size: 1.4em;
     line-height: 1.6em;

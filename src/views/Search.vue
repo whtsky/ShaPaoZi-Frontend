@@ -8,9 +8,9 @@
       </div>
     </template>
     <div id="pager" v-if="page">
-      <a v-link="{ name: 'search_with_page', params: { text: this.$route.params.text, page: this.page - 1 }}" v-if="page > 1">上一页</a>
-      <span>第 {{ page }} 页, 共 {{ max_page }}页. 找到 {{ total_results }}条结果.</span>
-      <a v-link="{ name: 'search_with_page', params: { text: this.$route.params.text, page: this.page + 1 }}" v-if="page < max_page">下一页</a>
+      <a id="pager-prev" v-link="{ name: 'search_with_page', params: { text: this.$route.params.text, page: this.page - 1 }}" v-if="page > 1">上一页</a>
+      <span>第 {{ page }} 页， 共 {{ max_page }} 页。 找到 {{ total_results }} 条结果</span>
+      <a id="pager-next" v-link="{ name: 'search_with_page', params: { text: this.$route.params.text, page: this.page + 1 }}" v-if="page < max_page">下一页</a>
     </div>
   </template>
 </template>
@@ -24,9 +24,34 @@
 
   #pager {
     padding: 10px 0;
-    margin: 10px 0;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    background-color: #f8f8f8;
+  }
+
+  #pager span {
+    line-height: 2;
+  }
+
+  #pager-prev, #pager-next {
+    background-color: rgba(255, 255, 255, .9);
+    padding: 5px 10px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,.3);
+  }
+
+  #pager-prev {
+    float: left;
+    border-radius: 20px 0 0 20px;
+  }
+
+  #pager-next {
+    float: right;
+    border-radius: 0 20px 20px 0;
   }
 </style>
 
