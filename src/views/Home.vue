@@ -1,14 +1,12 @@
 <template>
-  <div class="search">
-  </div>
+  <search-box></search-box>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      msg: 'Hello Home!'
+  import SearchBox from '../components/SearchBox.vue'
+  export default {
+    components: {
+      SearchBox
     }
   }
-}
 </script>
