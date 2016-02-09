@@ -6,7 +6,6 @@ import * as filters from './filters'
 
 if (process.env.NODE_ENV === 'development') {
   Vue.config.debug = true
-
 }
 
 Vue.use(VueRouter)

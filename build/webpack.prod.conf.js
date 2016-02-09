@@ -9,6 +9,10 @@ config.output.filename = '[name].[chunkhash].js'
 config.output.chunkFilename = '[id].[chunkhash].js'
 config.output.publicPath = 'http://7xqq5n.com1.z0.glb.clouddn.com/'
 
+config.entry.app = config.entry.app.concat([
+  './src/oneapm.js'
+])
+
 // whether to generate source map for production files.
 // disabling this can speed up the build.
 var SOURCE_MAP = false

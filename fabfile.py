@@ -7,5 +7,5 @@ env.use_ssh_config = True
 
 def build():
     local("npm run build")
-    rsync_project("/root/shapaoziFE/", "./dist/")
+    rsync_project("/root/shapaoziFE/", "./dist/", exclude="static")
     local("qrsync qiniu.json")
