@@ -4,7 +4,7 @@
     </div>
 </template>
 <style>
-    @import url(//fonts.useso.com/css?family=Alegreya+Sans+SC:300);
+    @import url(//fonts.googleapis.com/css?family=Alegreya+Sans+SC:300);
 
     #logo-area{
         display: flex;
