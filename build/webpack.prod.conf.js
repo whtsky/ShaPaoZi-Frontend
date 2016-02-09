@@ -7,10 +7,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 // dist/index.html will be auto-generated with correct URLs.
 config.output.filename = '[name].[chunkhash].js'
 config.output.chunkFilename = '[id].[chunkhash].js'
+config.output.publicPath = 'http://7xqq5n.com1.z0.glb.clouddn.com/'
 
 // whether to generate source map for production files.
 // disabling this can speed up the build.
-var SOURCE_MAP = true
+var SOURCE_MAP = false
 
 config.devtool = SOURCE_MAP ? 'source-map' : false
 
