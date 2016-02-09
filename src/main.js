@@ -4,10 +4,6 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import * as filters from './filters'
 
-if (process.env.NODE_ENV === 'development') {
-  Vue.config.debug = true
-}
-
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
@@ -45,5 +41,14 @@ router.map({
     component: Detail
   }
 })
+
+if (process.env.NODE_ENV === 'development') {
+  Vue.config.debug = true
+  window.ga = function () {}
+} else {
+  router.afterEach(function (transition) {
+    window.ga('send', 'pageview', transition.to.path)
+  })
+}
 
 router.start(App, 'app')
