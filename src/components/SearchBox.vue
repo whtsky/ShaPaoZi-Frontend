@@ -1,9 +1,7 @@
 <template>
-  <div id="search-wrapper">
-    <div id="search">
-      <input v-model="search_text" @keyup.enter="search" placeholder="猫的报恩" id="search-input">
-      <input type="submit" @click="search" id="search-button" value="搜索">
-    </div>
+  <div id="search">
+    <input v-model="search_text" @keyup.enter="search" placeholder="猫的报恩" id="search-input">
+    <input type="submit" @click="search" id="search-button" value="搜索">
   </div>
 </template>
 
@@ -23,7 +21,7 @@
 </script>
 
 <style>
-  #search-wrapper {
+  #search {
     display: flex;
     justify-content: center;
   }
@@ -34,6 +32,7 @@
     padding: 10px 25px;
     border: 3px solid #b94a48;
     outline: none;
+    -webkit-appearance: none
   }
 
   #search-input {
@@ -42,7 +41,6 @@
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
   }
-
 
   #search-button {
     margin-left: -30px;
@@ -65,11 +63,19 @@
   }
 
   @media (max-width: 600px) {
+    #search {
+      flex-direction: column;
+      align-items: center;
+    }
     #search input {
-      width: 90%;
+      width: 80%;
+      margin: 20px auto;
       border-radius: 15px;
       display: block;
-      margin: 20px auto
+    }
+
+    #search-button {
+      margin-left: 0;
     }
   }
 

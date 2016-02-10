@@ -11,6 +11,7 @@
 
 <style>
   .result {
+    word-break: break-all;
     background-color: rgba(255, 255, 255, .95);
     border-radius: 30px;
     padding: 25px 30px;
@@ -22,6 +23,12 @@
   @media (max-width: 900px) {
     .result {
       width: 85%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .result {
+      width: auto;
     }
   }
 

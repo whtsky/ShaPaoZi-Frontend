@@ -1,15 +1,15 @@
 <template>
-    <div id="logo-area">
-        <strong @click="goHome">ShaPaoZi.me</strong>
-    </div>
+  <div id="logo-area">
+    <strong @click="goHome">ShaPaoZi.me</strong>
+  </div>
 </template>
 <style>
   @import url(//fonts.googleapis.com/css?family=Alegreya+Sans+SC:300);
 
   #logo-area{
-      display: flex;
-      justify-content: center;
-      margin: 10vh auto;
+    display: flex;
+    justify-content: center;
+    margin: 10vh auto;
   }
 
   #logo-area strong {
@@ -20,6 +20,13 @@
     color: #b94a48;
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    #logo-area strong {
+      font-size: 50px;
+    }
+  }
+
 </style>
 <script>
   export default {
