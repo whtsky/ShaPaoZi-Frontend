@@ -10,6 +10,10 @@
       }
     },
     route: {
+      canReuse: false,
+      activate () {
+        window.document.title = 'Detail | ShaPaoZi.me'
+      },
       data (transition) {
         let infohash = transition.to.params.infohash
 

@@ -33,7 +33,10 @@ export default {
     }
   },
   route: {
-    canReuse: false
+    canReuse: false,
+    activate () {
+      window.document.title = 'Search: ' + this.$route.params.text + ' | ShaPaoZi.me'
+    }
   },
   methods: {
     loadNextPage () {
