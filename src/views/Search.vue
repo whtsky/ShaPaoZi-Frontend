@@ -1,15 +1,11 @@
 <template>
   <search-box :search_text="$route.params.text"></search-box>
-  <template v-if="results">
-    <template v-if="results.length">
-      <div id="results"
-           v-infinite-scroll="loadNextPage()"
-           infinite-scroll-disabled="loadingDisabled"
-           infinite-scroll-distance="400">
-        <result-card :result="item" v-for="item in results" track-by="infohash"></result-card>
-      </div>
-    </template>
-  </template>
+  <div id="results"
+       v-infinite-scroll="loadNextPage()"
+       infinite-scroll-disabled="loadingDisabled"
+       infinite-scroll-distance="400">
+    <result-card :result="item" v-for="item in results" track-by="infohash"></result-card>
+  </div>
   <loading v-if="loading"></loading>
 </template>
 
@@ -36,6 +32,9 @@ export default {
       loadingDisabled: false
     }
   },
+  route: {
+    canReuse: false
+  },
   methods: {
     loadNextPage () {
       if (this.loadingDisabled) {
@@ -49,7 +48,7 @@ export default {
         this.results = this.results.concat(response.data.results)
         this.max_page = response.data.max_page
         this.loading = false
-        if (this.max_page >= this.page) {
+        if (this.page >= this.max_page) {
           this.loadingDisabled = true
         } else {
           this.loadingDisabled = false
