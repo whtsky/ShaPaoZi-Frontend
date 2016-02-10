@@ -1,5 +1,6 @@
 <template>
   <loading v-if="loading"></loading>
+  <img src="../assets/404.png" v-if="notFound" id="not-found">
   <div id="detail" v-if="data.infohash">
     <header>{{ data.title }}</header>
     <ul>
@@ -59,6 +60,12 @@
     padding-top: 10px;
     margin-top: 10px;
   }
+
+  #not-found {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 </style>
 
 <script>
@@ -68,7 +75,8 @@
     data () {
       return {
         data: {},
-        loading: true
+        loading: true,
+        notFound: false
       }
     },
     route: {
@@ -85,8 +93,8 @@
           this.loading = false
 
         }, function (response) {
-
-          // error callback
+          this.loading = false
+          this.notFound = true
         })
       }
     },
