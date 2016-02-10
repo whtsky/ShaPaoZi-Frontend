@@ -1,8 +1,8 @@
-# shapaozi-frontend
+# The frontend of [ShaPaoZi.me](http://www.shapaozi.me)
 
 > The frontend of shapaozi.me
 
-## Build Setup
+## Build
 
 ``` bash
 # install dependencies
@@ -14,8 +14,4 @@ npm run dev
 # build for production with minification
 npm run build
 
-# run unit tests
-npm test
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
