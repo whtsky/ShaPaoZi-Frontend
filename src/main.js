@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import 'vue-infinite-scroll'
 import * as filters from './filters'
 
 Vue.use(VueRouter)
@@ -30,10 +31,6 @@ router.map({
   },
   '/search/:text': {
     name: 'search',
-    component: Search
-  },
-  '/search/:text/page/:page': {
-    name: 'search_with_page',
     component: Search
   },
   '/detail/:infohash': {
