@@ -2,7 +2,7 @@
   <div class="result">
     <a href="magnet:?xt=urn:btih:{{ result.infohash }}" class="download">磁力下载</a>
     <header>
-      {{ result.title }}
+      <a @click="this.$router.go({ name: 'detail', params: { infohash: result.infohash }})">{{ result.title }}</a>
     </header>
     首次发现: {{ result.first_seen | timeago }} &nbsp; 文件数: {{ result.file_count }} &nbsp;
     下载量: {{ result.seen }} &nbsp; 大小: {{ result.length | bytesToSize }}
@@ -38,6 +38,15 @@
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding-bottom: 10px;
     margin-bottom: 10px;
+  }
+
+  .result header a {
+    color: #222222;
+    cursor: pointer;
+  }
+
+  .result header a:hover {
+    border-bottom: 1px solid;
   }
 
   .download {

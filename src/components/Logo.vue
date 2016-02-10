@@ -1,6 +1,6 @@
 <template>
   <div id="logo-area">
-    <strong @click="goHome">ShaPaoZi.me</strong>
+    <strong @click="this.$router.go({ name: 'home'})">ShaPaoZi.me</strong>
   </div>
 </template>
 <style>
@@ -31,9 +31,6 @@
 <script>
   export default {
     methods: {
-      goHome () {
-        this.$router.go({ name: 'home'})
-      }
     }
   }
 </script>
