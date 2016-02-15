@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Search ShaPaoZi</ShortName>
+    <Description>Search ShaPaoZi</Description>
+    <Url type="text/html" method="get" template="http://www.shapaozi.me/search/{searchTerms}"/>
+</OpenSearchDescription>
