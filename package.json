@@ -1,5 +1,5 @@
 {
-  "name": "shapaozi-frontend",
+  "name": "ShaPaoZi-Frontend",
   "description": "The frontend of shapaozi.me",
   "author": "whtsky <whtsky@gmail.com>",
   "contributors": [
@@ -8,6 +8,7 @@
       "email": ""
     }
   ],
+  "license" : "BSD-3-Clause",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
